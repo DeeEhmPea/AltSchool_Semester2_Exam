@@ -6,11 +6,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 auth = Blueprint("auth", __name__)
 
-@auth.route("/about")
+@auth.route("/about", methods= ['GET', 'POST'])
 def about():
     return render_template("about.html", user=current_user)
 
-@auth.route("/contact")
+@auth.route("/contact", methods= ['GET', 'POST'])
 def contact():
     return render_template("contact.html", user=current_user)
 
